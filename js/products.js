@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         if (resultObj.status === "ok")
         {
             categoriesArray = resultObj.data;
-            //Muestro las categorías ordenadas
+            //Muestro las categorías ordenadas arreglar
             showCategoriesList(categoriesArray);
         }
     });
