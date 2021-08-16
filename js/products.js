@@ -1,22 +1,22 @@
-var productArray = [];
+var categoriesArray = [];
 
-function productArray(array){
+function showCategoriesList(array){
 
     let htmlContentToAppend = "";
     for(let i = 0; i < array.length; i++){
         let category = array[i];
 
         htmlContentToAppend += `
-        <div>
-            <div>
-                <div>
+        <div class="list-group-item list-group-item-action">
+            <div class="row">
+                <div class="col-3">
                     <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
                 </div>
-                <div>
-                    <div>
-                        <h4>`+ category.name +`</h4>
+                <div class="col">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="mb-1">`+ category.name +`</h4>
                         <p>`+ category.description +`</p>
-                        <p>`+ category.cost +`</p>
+                        <p>` + `precio: ` + category.cost +`</p>
                     </div>
 
                 </div>
@@ -24,23 +24,20 @@ function productArray(array){
         </div>
         `
 
-        document.getElementById("contenedor").innerHTML = htmlContentToAppend;
+        document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
     }
 }
-
-
-
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function (e) {
-    getJSONData(PRODUCTS_URL).then(function(productoObj){
-        if (productoObj.status === "ok")
+document.addEventListener("DOMContentLoaded", function(e){
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
+        if (resultObj.status === "ok")
         {
-            productosArray = resultObj.data;
+            categoriesArray = resultObj.data;
             //Muestro las categorías ordenadas
-            productArray(productosArray);
+            showCategoriesList(categoriesArray);
         }
     });
 });
