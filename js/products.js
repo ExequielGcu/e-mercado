@@ -1,7 +1,7 @@
 var productosArray = [];
 
 
-//Funcion que agarra un array y lo recorre es para productos
+//Funcion que agarra un array y lo recorre es para los productos
 function traerProductos(array){
 
     let htmlContentToAppend = "";
