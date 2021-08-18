@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 
     //Trae la informacion y la guarda en la variable productosArray
-    //Luego llamo a la funcion traerproductos y muestro los productos
+    //Luego llamo a la funcion traer productos y muestro los productos
     getJSONData(PRODUCTS_URL).then(function(productosObj){
         if (productosObj.status === "ok")
         {
