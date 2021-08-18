@@ -9,22 +9,25 @@ function traerProductos(array){
         let productos = array[i];
 
         htmlContentToAppend += `
-        <div>
-            <div>
-                <div >
-                    <img width="200px" src="` + productos.imgSrc + `" alt="` + productos.description + `" class="img-thumbnail">
-                </div>
-                <div>
-                    <div>
-                        <h4>`+ productos.name +`</h4>
-                        <p>`+ productos.description +`</p>
-                        <p>` + `PRECIO: ` + productos.cost +`</p>
-                    </div>
-
-                </div>
+        <div class="contenedor">
+            <div class="carta">
+                <img width="200px" src="` + productos.imgSrc + `" alt="` + productos.description + `" class="img-thumbnail">
             </div>
+                <div class="descripcion">
+                    <h1>`+ productos.name +`</h1>
+                    <p class="fecha">`+ productos.description +`</p>
+                </div>
+
+                <div class="precio">
+
+                <div class="box-precio">
+                <br>
+                <span>Precio:</span>
+                <span class="precio1"><b>` + productos.cost +`</b></span>
+                <span class="shoping"><i></i></span>
+                </div>
+                </div>
         </div>
-        <hr>
         `
 
         document.getElementById("contenedor-productos").innerHTML = htmlContentToAppend;
