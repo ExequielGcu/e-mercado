@@ -24,6 +24,7 @@ function traerProductos(array){
                 </div>
             </div>
         </div>
+        <hr>
         `
 
         document.getElementById("contenedor-productos").innerHTML = htmlContentToAppend;
