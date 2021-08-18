@@ -1,22 +1,24 @@
-var categoriesArray = [];
+var productosArray = [];
 
-function showCategoriesList(array){
+
+//Funcion que agarra un array y lo recorre es para productos
+function traerProductos(array){
 
     let htmlContentToAppend = "";
     for(let i = 0; i < array.length; i++){
-        let category = array[i];
+        let productos = array[i];
 
         htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
+        <div>
+            <div>
+                <div >
+                    <img width="200px" src="` + productos.imgSrc + `" alt="` + productos.description + `" class="img-thumbnail">
                 </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ category.name +`</h4>
-                        <p>`+ category.description +`</p>
-                        <p>` + `precio: ` + category.cost +`</p>
+                <div>
+                    <div>
+                        <h4>`+ productos.name +`</h4>
+                        <p>`+ productos.description +`</p>
+                        <p>` + `PRECIO: ` + productos.cost +`</p>
                     </div>
 
                 </div>
@@ -24,7 +26,7 @@ function showCategoriesList(array){
         </div>
         `
 
-        document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
+        document.getElementById("contenedor-productos").innerHTML = htmlContentToAppend;
     }
 }
 
@@ -32,12 +34,16 @@ function showCategoriesList(array){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUCTS_URL).then(function(resultObj){
-        if (resultObj.status === "ok")
+
+
+    //Trae la informacion y la guarda en la variable productosArray
+    //Luego llamo a la funcion traerproductos y muestro los productos
+    getJSONData(PRODUCTS_URL).then(function(productosObj){
+        if (productosObj.status === "ok")
         {
-            categoriesArray = resultObj.data;
-            //Muestro las categorías ordenadas arreglar
-            showCategoriesList(categoriesArray);
+            productosArray = productosObj.data;
+            //Muestro los productos que tengo
+            traerProductos(productosArray);
         }
     });
 });

@@ -201,3 +201,11 @@ input[type="password"]{
 .button:hover{
   background: cadetblue;
 }
+/*Mis estilos login FIN*/
+
+
+/*Estilo lista de productos*/
+
+.auto{
+ padding: 10px; 
+}
