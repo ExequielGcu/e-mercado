@@ -44,19 +44,20 @@
       <h1>Iniciar Sesión</h1>
       <div class="contenedor-login">
         <div class="input-contenedor">
-          <input type="text" name="user" placeholder="Usuario">
+          <input type="text" name="user" placeholder="Usuario" required="">
         </div>
       </div>
-      <div class="contenedor-login">
+      <div class="contenedor-login" >
         <div class="input-contenedor">
-          <input type="password" name="password" placeholder="Contraseña">
+          <input type="password" name="password" placeholder="Contraseña" required="">
         </div>
       </div>
-      <a href="principal.html" class="button">Iniciar Sesión</a>
+      <button onclick="location.href='principal.html'" class="button" type="submit" >Iniciar Sesión</button>
       
     </form>
   </div>
 
+  
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>
