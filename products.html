@@ -21,8 +21,23 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <div class="usuario_estilo" id="prueba"></div>
       </div>
     </nav>
+    <div id="contenedorFiltroPrecio" >
+      <label for="Rangos">Filtro de Precios</label><br>
+      <input type="number" name="min" id="min" placeholder="minimo"><br>
+      <input type="number" name="max" id="max" placeholder="maximo"><br>
+      <button class="botonexe btn1" id="filtro">Aplicar Filtro</button>
+      <button class="botonexe btn1" id="eliminarFiltro">Borrar Filtro</button>
+    </div>
+    <div id="contenedorAsendenteDesendete" >
+      <label for="Rangos">Filtar por:</label><br>
+      <button class="botonexe btn1" id="precioAscendete">Precio Ascendente</button>
+      <button class="botonexe btn1" id="precioDesendete">Precio Desendete</button>
+      <button class="botonexe btn1" id="relevancia">Por relvancia</button>
+    </div>
+
     <!--Aca invoco los productos-->
     <div class="container p-5" >
       <h1>Productos Para Vender</h1>
