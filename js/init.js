@@ -45,3 +45,13 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
 });
+
+function cargarUsuario(){
+
+  let nombre = localStorage.getItem("Usuario");
+
+  document.getElementById("prueba").innerHTML = `
+  <span>Usuario: </span>` + nombre;
+  }
+
+  cargarUsuario();
