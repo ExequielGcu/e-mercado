@@ -212,9 +212,11 @@ input[type="password"]{
  }
 
 .contenedor{
+  position: relative;
   height: 510px;
-  width: 30%;
+  width: 20%;
   box-shadow: 0 0 7px #111;
+  left: -115px;
   margin: 0 10px;
  }
 
@@ -269,3 +271,59 @@ input[type="password"]{
   color: red;
   font-size: 1.5em;
  }
+
+ /*Estilo Login trear nombre*/
+
+ .usuario_estilo{
+  color: #fff;
+ font-size: 1.2em;
+}
+
+
+/*Estilo filtros*/
+#contenedorFiltroPrecio{
+  position: absolute;
+  border: 0px solid #000;
+  width: 300px;
+  text-align: center;
+  margin: auto;
+  left: 950px;
+  top: 200px;
+}
+
+#contenedorAsendenteDesendete{
+  position: absolute;
+  border: 0px solid #000;
+  width: 300px;
+  text-align: center;
+  margin: auto;
+  left: 950px;
+  bottom: 140px;
+}
+
+#contenedorAsendenteDesendete{
+  margin: 10px 0;
+}
+
+#contenedorFiltroPrecio input{
+  margin: 5px 0;
+}
+
+.botonexe{
+  border: 3px solid rgba(100,100,100,0.1);
+	margin-bottom: 20px;
+	font-family: 'Poppins', sans-serif;
+	border-radius: 8px;
+	cursor: pointer;
+	color: #fff;
+	background-size: 300%;
+	transition: 0.6s;
+}
+
+.botonexe:hover{
+	background-position: right;
+}
+
+.btn1{
+	background-image: linear-gradient(to left, #00B7DA, #161569, #00B7DA);
+}
