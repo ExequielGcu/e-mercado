@@ -1,11 +1,17 @@
 const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
 const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
 const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
-const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
+const PRODUCTS_URL = "https://exequielgcu.github.io/api-alternativo/autos-nuevos.json";
 const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678.json";
 const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
+//informacion de los autos
+const AUTO_INFO_UNO = "https://exequielgcu.github.io/api-alternativo/product-info-auto-chevrolet-onxi.json";
+const AUTO_INFO_DOS = "https://exequielgcu.github.io/api-alternativo/product-info-auto-fiat-way.json";
+const AUTO_INFO_TRES = "https://exequielgcu.github.io/api-alternativo/product-info-auto-susuki-celerio.json";
+const AUTO_INFO_CUATRO = "https://exequielgcu.github.io/api-alternativo/product-info-auto-Peugeot-208.json";
+//informacion de los autos
 
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";

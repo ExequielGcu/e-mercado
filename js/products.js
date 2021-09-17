@@ -3,6 +3,12 @@ var productosArray = [];
 var minPrice;
 var maxPrice;
 
+//Funcion que agarra el id del auto
+function verAuto(id){
+    localStorage.setItem("auto",JSON.stringify({autoid: id}));
+    localStorage.setItem("comentariosAutos",JSON.stringify({encuestaid: id}));
+    window.location =  'product-info.html'
+}
 
 //Funcion que agarra un array y lo recorre es para los productos
 function traerProductos(array){
@@ -16,7 +22,7 @@ function traerProductos(array){
         ((maxPrice == undefined) || (maxPrice != undefined && parseInt(productos.cost) <= maxPrice))){
 
         productCar += `
-        <div class="contenedor">
+        <div class="contenedor" onclick="verAuto(`+ productos.id + `)">
             <div class="carta">
                 <img width="200px" src="` + productos.imgSrc + `" alt="` + productos.description + `" class="img-thumbnail">
             </div>
