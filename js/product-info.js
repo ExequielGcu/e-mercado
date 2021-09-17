@@ -30,16 +30,24 @@ function encuentraAuto() {
 }
 
 
+
+
 //Trae un auto en particular
 function traerAuto(car) {
     var infocar = "";
 
-    infocar += `
+    infocar = `
+        <div class="auto">
             <h2>${car.name}</h2>
+            <img src="${car.images[0]}" style="width:150px;"></img>
+            <img src="${car.images[1]}" style="width:150px;"></img>
+            <img src="${car.images[2]}" style="width:150px;"></img>
+            <img src="${car.images[3]}" style="width:150px;"></img>
+            <img src="${car.images[4]}" style="width:150px;"></img><br>
             <strong>${car.description}</strong><br>
-            ${car.cost}<br>
-            ${car.currency}<br>
-            ${car.category}<br>
+            <p>PRECIO EN ${car.currency}: <strong>${car.cost}</strong></p>
+        </div>
+        <br>
     `;
 
     document.getElementById("productosInformacion").innerHTML = infocar;
@@ -50,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(encuentraAuto()).then(function (result) {
         if (result.status === "ok") {
             autoArray = result.data;
+
             traerAuto(autoArray);
         }
 
@@ -61,17 +70,89 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 function traerComentarios(arrayCar) {
 
+
+
     let comentariosCar = "";
 
     for (let i = 0; i < arrayCar.length; i++) {
         let comentarios = arrayCar[i];
+        if (comentarios.score == 1) {
+            comentariosCar += `
+            <div class=comentarios>
+            <h2>${comentarios.user}</h2>
+            <strong>${comentarios.description}</strong><br>  
+            <article class=estrellas>         
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            </article>
+            <strong class="hora">Fecha: ${comentarios.dateTime}</strong>
+            </div>
+            `;
+        } if (comentarios.score == 2) {
+            comentariosCar += `
+            <div class=comentarios>
+            <h2>${comentarios.user}</h2>
+            <strong>${comentarios.description}</strong><br>
+            <article class=estrellas>  
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            </article>
+            <strong class="hora">Fecha: ${comentarios.dateTime}</strong>
+            </div>
+            `;
+        } if (comentarios.score == 3) {
+            comentariosCar += `
+            <div class=comentarios>
+            <h2>${comentarios.user}</h2>
+            <strong>${comentarios.description}</strong><br>
+            <article class=estrellas>  
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            </article>
+            <strong class="hora">Fecha: ${comentarios.dateTime}</strong>
+            </div>
+            `;
+        } if (comentarios.score == 4) {
+            comentariosCar += `
+            <div class=comentarios>
+            <h2>${comentarios.user}</h2>
+            <strong>${comentarios.description}</strong><br>
+            <article class=estrellas>  
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            </article>
+            <strong class="hora">Fecha: ${comentarios.dateTime}</strong>
+            </div>
+            `;
+        } if (comentarios.score == 5) {
+            comentariosCar += `
+            <div class=comentarios>
+            <h2>${comentarios.user}</h2>
+            <strong>${comentarios.description}</strong><br>
+            <article class=estrellas>  
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            </article>
+            <strong class="hora">Fecha: ${comentarios.dateTime}</strong>
+            </div>
+            `;
+        }
 
-        comentariosCar += `
-        <h2>${comentarios.user}</h2>
-        <strong>${comentarios.description}</strong><br>
-        ${comentarios.score}<br>
-        ${comentarios.dateTime}<br>
-`;
     }
 
     document.getElementById("productosComentarios").innerHTML += comentariosCar;
@@ -116,12 +197,14 @@ function gaurdarComentario() {
     let comentario = localStorage.getItem("Descripcion");
 
     document.getElementById("productosComentarios").innerHTML += `
+    <div>
     <h2> `+ nombre +`</h2>
     <strong>`+ comentario +`</strong><br>
-    `+ puntaje +`<br>
+    <strong>Puntacion: `+ puntaje +`</strong><br>
+    </div>
 `;
 
 }
 
-    //Funcion trae comentario escrito por uno mismo
+
 
