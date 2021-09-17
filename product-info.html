@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/styledos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -27,11 +27,33 @@
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div id="productosInformacion">
+ 
+    </div>
+
+    <div id="productosComentarios">
+      <h1>Comentarios</h1>
+    </div>
+
+    <div id="productosComentar">
+      <br>
+      <h2><strong>Que te parece</strong> </h2>
+      <form>
+        <div class="labels">
+          <label for="txtUser">Nombre</label>
+          <label for="txtScore">Puntuacion</label>
+          <label for="txtDescription">Descripcion</label>
+        </div>
+
+        <div>
+          <input type="text" name="txtUser" id="txtUser" required="">
+          <input type="number" name="txtScore" id="txtScore" required="">
+          <input type="text" name="txtDescription" id="txtDescription" required="">
+          
+        </div>
+      </form>
+      <br>
+      <button  class="button" onclick="gaurdarComentario()">Comentar</button>
     </div>
   </div>
   <footer class="text-muted">
