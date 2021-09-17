@@ -220,6 +220,11 @@ input[type="password"]{
   margin: 0 10px;
  }
 
+ .contenedor:hover{
+  border: 5px solid red;
+  cursor: pointer;
+ }
+
  .contenedor .carta{
    margin-bottom: 100px;
     width: 200px;
@@ -327,3 +332,6 @@ input[type="password"]{
 .btn1{
 	background-image: linear-gradient(to left, #00B7DA, #161569, #00B7DA);
 }
+
+
+

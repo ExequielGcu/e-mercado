@@ -321,3 +321,64 @@ h1{
 	padding: 5px 10px;
     margin: 10px 50px;
 }
+
+/*Estilo para autos*/
+.auto{
+	border: 2px solid red;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+}
+
+.auto img{
+	border: 2px solid red;
+    text-align: center;
+}
+
+/*Estrellas*/
+
+.star-rating {
+  direction: rtl;
+  display: inline-block;
+  padding: 20px
+}
+
+.star-rating input[type=radio] {
+  display: none
+}
+
+.star-rating label {
+  color: rgb(133, 142, 192);
+  font-size: 50px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input[type=radio]:checked ~ label {
+  color: #ffbf00
+}
+
+/*Comentarios ya creados por la gente*/
+
+#productosComentarios{
+	margin: 10px 5px;
+  padding: 20px;
+}
+
+#productosComentarios div{
+	border-bottom: 3px solid;
+  margin: 20px 5px;
+  padding: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.hora{
+	float: right;
+  margin-top: -20px;
+}
