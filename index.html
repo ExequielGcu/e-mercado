@@ -12,7 +12,8 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/stlye-login.css">
+  <!-- Estilo comentado mientras 
   <style>
     html, body{
       height: 100%;
@@ -35,30 +36,69 @@
       margin: auto;
     }
   </style>
+
+  -->
 </head>
 
-<body class="text-center">
-  <div class="container p-5">
-    <form action="principal.html" class="formulario">
+<body>
 
+  <header class="bg_animate">
+    <div class="header_nav">
+      <div class="contenedor">
+        <h1>JapEcommerce</h1>
+        <nav>
+          <a href="#">Registrate</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="banner contenedor">
+    <secrion class="banner_title">
+      <h2>Que esperas para comprar!! <br> Inicia Sesión Ahora</h2>
+      <button id="open" class="registrate">Iniciar Sesión</button>
+    </secrion>
+    <div class="banner_img">
+      <img src="img/logo.png" alt="">
+    </div>
+
+    <div class="burbujas">
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+      <div class="burbuja"></div>
+    </div>
+  </section>
+
+ 
+
+  <div class="modal_container" id="modal_container">
+    <div class="modal_full">
+      <button id="close" class="close">X</button>
       <h1>Iniciar Sesión</h1>
-      <div class="contenedor-login">
-        <div class="input-contenedor">
-          <input type="text" name="user" placeholder="Usuario" required="" id="username">
-        </div>
+      <div class="container p-5">
+        <form action="principal.html" class="formulario">
+          <div class="contenedor-login">
+            <div class="input-contenedor">
+              <input type="text" name="user" placeholder="Usuario" required="" id="username">
+            </div>
+          </div>
+          <div class="contenedor-login" >
+            <div class="input-contenedor">
+              <input type="password" name="password" placeholder="Contraseña" required="">
+            </div>
+          </div>
+          <button  class="button" type="submit" onclick="usuario()">Iniciar Sesión</button>
+          
+        </form>
       </div>
-      <div class="contenedor-login" >
-        <div class="input-contenedor">
-          <input type="password" name="password" placeholder="Contraseña" required="">
-        </div>
-      </div>
-      <button  class="button" type="submit" onclick="usuario()">Iniciar Sesión</button>
-      
-    </form>
+    </div>
   </div>
 
-  
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>
+
 </html>
