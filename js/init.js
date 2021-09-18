@@ -6,6 +6,7 @@ const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678
 const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
+const USUARIOS_URL = "https://exequielgcu.github.io/api-alternativo/usuarios.json";
 //informacion de los autos
 const AUTO_INFO_UNO = "https://exequielgcu.github.io/api-alternativo/product-info-auto-chevrolet-onxi.json";
 const AUTO_INFO_DOS = "https://exequielgcu.github.io/api-alternativo/product-info-auto-fiat-way.json";

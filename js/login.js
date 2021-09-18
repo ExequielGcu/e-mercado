@@ -1,8 +1,3 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
-});
 
 //Aca empieza la abrida y cerrada de la ventana modal
 const open = document.getElementById("open");
@@ -19,10 +14,31 @@ close.addEventListener('click', () => {
 
 //Aca termina la abrida y cerrada de la ventana modal
 
-function usuario(){
+
+/*Validaciones*/
+var username = document.getElementById("username"); 
+var contraseña = document.getElementById("password"); 
+var error = document.getElementById("error_login"); 
+error.style.color = 'red';
+
+function enviarFormulario(){
 
 
-    let username = document.getElementById("username").value; 
+    var mensajesError = []; 
+        if((username.value === "Jap2021" && contraseña.value === "123456789") || (username.value === "ExequielxC" && contraseña.value === "SOFIA2015") ){
+            window.location =  'principal.html'
+        }if(username.value === null || username.value === "" || username.value !== "Jap2021" || username.value !== "ExequielxC"){
+            mensajesError.push("Usuario invalido o campo vacio");
+        }if(contraseña.value === null || contraseña.value === "" || contraseña.value !== "123456789" || contraseña.value !== "SOFIA2015"){
+            mensajesError.push("Contraseña invalida o campo vacio");
+        }
     
-    localStorage.setItem("Usuario", username);
+       error.innerHTML = mensajesError.join(', ');
+
+       var usuarioFinal = document.getElementById("username").value; 
+       localStorage.setItem("Usuario", usuarioFinal);
+    return false;
     }
+
+
+/*Fin de validaciones */
