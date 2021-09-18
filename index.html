@@ -79,19 +79,20 @@
       <button id="close" class="close">X</button>
       <h1>Iniciar Sesión</h1>
       <div class="container p-5">
-        <form action="principal.html" class="formulario">
+
+        <form action="" class="formulario">
           <div class="contenedor-login">
             <div class="input-contenedor">
-              <input type="text" name="user" placeholder="Usuario" required="" id="username">
+              <input type="text" name="user" placeholder="Usuario" id="username">
             </div>
           </div>
           <div class="contenedor-login" >
             <div class="input-contenedor">
-              <input type="password" name="password" placeholder="Contraseña" required="">
+              <input type="password" name="password" placeholder="Contraseña" id="password">
             </div>
           </div>
-          <button  class="button" type="submit" onclick="usuario()">Iniciar Sesión</button>
-          
+          <button  class="button" type="submit" onclick="return enviarFormulario()">Iniciar Sesión</button>
+          <div id="error_login"></div>
         </form>
       </div>
     </div>
