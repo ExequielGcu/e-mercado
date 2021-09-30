@@ -62,3 +62,8 @@ function cargarUsuario(){
   }
 
   cargarUsuario();
+
+  function CerrarSession(){
+    window.location =  'index.html';
+    storage.clear();
+    }
