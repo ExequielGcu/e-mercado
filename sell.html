@@ -28,6 +28,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/dropzone.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1442bcc145.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -37,7 +38,15 @@
             <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
             <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
             <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-            <div class="usuario_estilo" id="prueba"></div>
+            <div class="dropdown">
+              <button id="prueba" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Opciones
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="my-profile.html">Perfil</a>
+                <i class="fas fa-shopping-cart dropdown-item" ><a href="cart.html"> Mi carrito</a></i>
+                <a class="dropdown-item" href="#">Cerrar Session</a>
+              </div>
         </div>
     </nav>
       <div class="container">
