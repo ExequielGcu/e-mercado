@@ -382,3 +382,26 @@ h1{
 	float: right;
   margin-top: -20px;
 }
+
+/*Estilos relacion de colores*/
+.relacionCar {
+  text-align: center;
+  border: 3px solid;
+  margin: 10px;
+  background: #000;
+  color: #fff;
+}
+
+.h2realcionCar {
+  border: 6px solid red;
+  border-radius: 40%;
+  background: rebeccapurple;
+  margin: 10px;
+}
+
+.auto img {
+  border: 2px solid red;
+  text-align: center;
+  position: relative;
+  left: 235px;
+}
