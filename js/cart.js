@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             
                 document.getElementById("pesos").innerHTML = pesosURU;
             
-                document.getElementById("dolares").innerHTML = dolaresUSD;
+                document.getElementById("dolares").innerHTML = dolaresUSD.toFixed(2);
 
             //Con un addEventListener por medio del clicj voy cambiando el valor final
             document.getElementById("cantidad").addEventListener("click", convertir);
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             
                 document.getElementById("pesos").innerHTML = pesosURU;
             
-                document.getElementById("dolares").innerHTML = dolaresUSD;
+                document.getElementById("dolares").innerHTML = dolaresUSD.toFixed(2);
             }
 
         }
