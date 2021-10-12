@@ -1,6 +1,85 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
+//Funcion que agarra un array y lo recorre es para los productos
+function traerProductosCarrito(array) {
 
+    let productosCarrito = "";
+
+    for (let i = 0; i < array.articles.length; i++) {
+        let carro = array.articles[i];
+        
+        productosCarrito += `
+
+        <div class="row">
+      <div class="col-md-2">
+       <img src="./${carro.src}" alt="" style="width: 100px;">
+      </div>
+      <div class="col-md-10">
+        <h5>${carro.name}</h5>
+        <span>Precio ${carro.currency}: <b>${carro.unitCost}</b></span>
+       </div>
+       <div class="col-md-2"></div>
+       <div class="col-md-10">
+        <label for="cantidad">Cantidad:</label>
+        <input class="cart-campo-cantidad" type="number" name="cantidad" id="cantidad" min="1" value="1" max="16">
+       </div>
+       <div class="col-md-2"></div>
+       <div class="col-md-10">
+        <a href="#">Guardar para despues</a>
+        <a href="#">Eliminar</a>
+       </div>
+    </div>
+        `
+    ;
+
+        document.getElementById("traeProductosCarro").innerHTML += productosCarrito;
+    }
+}
+
+
+
+
+
+//va a traer el queramos comprar y lo guarda en una variable
+//Por medio de una funcion trae los datos
+
+document.addEventListener("DOMContentLoaded", function (e) {
+
+    getJSONData(CART_INFO_URL).then(function (carritosObj) {
+        if (carritosObj.status === "ok") {
+            carritoproducto = carritosObj.data;
+            //Muestro los productos que tengo
+            traerProductosCarrito(carritoproducto);
+
+            let cantidad = document.getElementById("cantidad").value;
+            
+                let pesosURU = cantidad * 100;
+            
+                let dolaresUSD = pesosURU / 43.38;
+            
+                document.getElementById("pesos").innerHTML = pesosURU;
+            
+                document.getElementById("dolares").innerHTML = dolaresUSD;
+
+            //Con un addEventListener por medio del clicj voy cambiando el valor final
+            document.getElementById("cantidad").addEventListener("click", convertir);
+            function convertir() {
+                let cantidad = document.getElementById("cantidad").value;
+            
+                let pesosURU = cantidad * 100;
+            
+                let dolaresUSD = pesosURU / 43.38;
+            
+                document.getElementById("pesos").innerHTML = pesosURU;
+            
+                document.getElementById("dolares").innerHTML = dolaresUSD;
+            }
+
+        }
+    });
 });
+
+
+
+
+
+
+ 

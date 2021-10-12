@@ -12,6 +12,8 @@ const AUTO_INFO_UNO = "https://exequielgcu.github.io/api-alternativo/product-inf
 const AUTO_INFO_DOS = "https://exequielgcu.github.io/api-alternativo/product-info-auto-fiat-way.json";
 const AUTO_INFO_TRES = "https://exequielgcu.github.io/api-alternativo/product-info-auto-susuki-celerio.json";
 const AUTO_INFO_CUATRO = "https://exequielgcu.github.io/api-alternativo/product-info-auto-Peugeot-208.json";
+
+const nueva = "https://japdevdep.github.io/ecommerce-api/cart/654.json"
 //informacion de los autos
 
 var showSpinner = function(){

@@ -27,6 +27,34 @@
         font-size: 3.5rem;
       }
     }
+
+    .cart-campo-cantidad {
+    width: 40px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #002e36;
+}
+.selector-moneda-de-pago {
+    list-style-type: none;
+    max-width: 600px;
+    margin: 20px auto 0;
+    padding: 0;
+    border-radius: 5px;
+    border: 1px solid #004880;
+    box-sizing: border-box;
+}
+.newcart-proximo-paso {
+    cursor: pointer;
+    color: #004880;
+    background-color: #fff;
+    font-size: 18px;
+    border: 1px solid #004880;
+    padding: 15px 0;
+    text-decoration: none;
+    display: block;
+    border-radius: 50px;
+    width: 100%;
+}
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -41,7 +69,6 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       <div class="dropdown">
         <button id="prueba" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Opciones
@@ -54,14 +81,41 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  
+<div>
+  <div class="container ">
+    <div class="row">
+      <div class="col-md">
+        <h2 class="text-center">Carrito de compras</h2>
+      </div>
+      <div class="col-md">
+        <span><a href=""> Vaciar carrito</a></span>
+      </div>
     </div>
+    <!--Aca se traen los porductos-->
+    <div id="traeProductosCarro"></div>
+</div>
+
+<br><br>
+    <div class="row m-auto selector-moneda-de-pago">
+      <div class="col col-md-6 text-center">
+        <label for="peso">Pagar en: <b  >Pesos</b></label><br>
+        <span id="pesos">Precio</span>
+       </div>
+       <div class="col col-md-6 text-center">
+        <label for="dolares">Pagar en: <b >Dolares</b></label><br>
+        <span id="dolares"></span>
+        </div>
+    </div>
+<br>
+    <div class="row m-auto ">
+      <div class="col-md">
+        <button class="newcart-proximo-paso" type="submit">Elegir metodo de envio</button>
+      </div>
+    </div>
+
   </div>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
