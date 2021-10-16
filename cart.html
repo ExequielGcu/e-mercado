@@ -29,32 +29,47 @@
     }
 
     .cart-campo-cantidad {
-    width: 40px;
-    padding: 5px;
-    font-size: 14px;
-    border: 1px solid #002e36;
-}
-.selector-moneda-de-pago {
-    list-style-type: none;
-    max-width: 600px;
-    margin: 20px auto 0;
-    padding: 0;
-    border-radius: 5px;
-    border: 1px solid #004880;
-    box-sizing: border-box;
-}
-.newcart-proximo-paso {
-    cursor: pointer;
-    color: #004880;
-    background-color: #fff;
-    font-size: 18px;
-    border: 1px solid #004880;
-    padding: 15px 0;
-    text-decoration: none;
-    display: block;
-    border-radius: 50px;
-    width: 100%;
-}
+      width: 40px;
+      padding: 5px;
+      font-size: 14px;
+      border: 1px solid #002e36;
+    }
+
+    .selector-moneda-de-pago {
+      list-style-type: none;
+      max-width: 600px;
+      margin: 20px auto 0;
+      padding: 0;
+      border-radius: 5px;
+      border: 1px solid #004880;
+      box-sizing: border-box;
+    }
+
+    .newcart-proximo-paso {
+      cursor: pointer;
+      color: #004880;
+      background-color: #fff;
+      font-size: 18px;
+      border: 1px solid #004880;
+      padding: 15px 0;
+      text-decoration: none;
+      display: block;
+      border-radius: 50px;
+      width: 100%;
+    }
+
+    .newcart-proximo-paso:hover {
+      cursor: pointer;
+      color: #fff;
+      background-color: #004880;
+      font-size: 18px;
+      border: 1px solid #004880;
+      padding: 15px 0;
+      text-decoration: none;
+      display: block;
+      border-radius: 50px;
+      width: 100%;
+    }
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -70,47 +85,71 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="dropdown">
-        <button id="prueba" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="prueba" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Opciones
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="my-profile.html">Perfil</a>
-          <i class="fas fa-shopping-cart dropdown-item" ><a href="cart.html"> Mi carrito</a></i>
+          <i class="fas fa-shopping-cart dropdown-item"><a href="cart.html"> Mi carrito</a></i>
           <a class="dropdown-item" href="#" onclick="CerrarSession()">Cerrar Session</a>
         </div>
       </div>
     </div>
   </nav>
-  
-<div>
-  <div class="container ">
-    <div class="row">
-      <div class="col-md">
-        <h2 class="text-center">Carrito de compras</h2>
-      </div>
-      <div class="col-md">
-        <span><a href=""> Vaciar carrito</a></span>
-      </div>
-    </div>
-    <!--Aca se traen los porductos-->
-    <div id="traeProductosCarro"></div>
-</div>
 
-<br><br>
+  <div>
+    <div class="container ">
+      <div class="row">
+        <div class="col-md">
+          <h2 class="text-center">Carrito de compras</h2>
+        </div>
+        <div class="col-md">
+          <span><a href=""> Vaciar carrito</a></span>
+        </div>
+      </div>
+      <!--Aca se traen los porductos-->
+      <div id="traeProductosCarro"></div>
+    </div>
+
+    <br><br>
     <div class="row m-auto selector-moneda-de-pago">
       <div class="col col-md-6 text-center">
-        <label for="peso">Pagar en: <b  >Pesos</b></label><br>
+        <label for="peso">Pagar en: <b>Pesos</b></label><br>
         <span id="pesos">Precio</span>
-       </div>
-       <div class="col col-md-6 text-center">
-        <label for="dolares">Pagar en: <b >Dolares</b></label><br>
+      </div>
+      <div class="col col-md-6 text-center">
+        <label for="dolares">Pagar en: <b>Dolares</b></label><br>
         <span id="dolares"></span>
-        </div>
+      </div>
     </div>
-<br>
-    <div class="row m-auto ">
+    <br>
+    <div class="row m-auto selector-moneda-de-pago ">
       <div class="col-md">
-        <button class="newcart-proximo-paso" type="submit">Elegir metodo de envio</button>
+        <h1 class="text-center">Envio</h1>
+        <div class="respuestas">
+          <input type="radio" name="preg1" value="1" />A domicilio<br />
+          <input type="radio" name="preg1" value="2" />Retirar en sucursal<br />
+          <input type="radio" name="preg1" value="3" />Empresa<br />
+        </div>
+
+        <table class="default text-center" style="border: 1px solid;">
+          <tr>
+            <th></th>
+            <th>Llega en:</th>
+            <th>Precio</th>
+          </tr>
+          <tr style="border: 1px solid;">
+            <td></td>
+            <td>48hs o 72hs habiles</td>
+            <td>$300</td>
+          </tr>
+        </table>
+        <br>
+        <div class="col-md">
+          <button class="newcart-proximo-paso" type="submit">Elegir metodo de envio</button>
+        </div>
+        <br>
       </div>
     </div>
 
