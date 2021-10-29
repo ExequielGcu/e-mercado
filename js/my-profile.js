@@ -34,6 +34,7 @@ document.getElementById("guardarDatos").addEventListener('click', function (even
     final = JSON.parse(guardado);
    //Guarda la informacion del local Storage y la pasa a una variable....
 
+  
 });
 
 
