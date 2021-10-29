@@ -42,22 +42,49 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="dropdown">
-        <button id="prueba" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button id="prueba" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Opciones
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="my-profile.html">Perfil</a>
-          <i class="fas fa-shopping-cart dropdown-item" ><a href="cart.html"> Mi carrito</a></i>
+          <i class="fas fa-shopping-cart dropdown-item"><a href="cart.html"> Mi carrito</a></i>
           <a class="dropdown-item" href="#" onclick="CerrarSession()">Cerrar Session</a>
         </div>
-    </div>
+      </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+    <div class="card" style="width: 90%;margin: auto;">
+      <div class="card-header text-center">Informacion Personal</div>
+      <div class="card-body">
+        <form action="">
+          <label for="name" class="form-label"><b id="nameFinal">Nombre:</b></label>
+          <input type="text" class="form-control" id="name" placeholder="Cambia tu nombre">
+
+          <label for="surname" class="form-label"><b id="surnameFinal">Apellido:</b></label>
+          <input type="text" class="form-control" id="surname" placeholder="Cambia tu apellido">
+
+          <label for="celular" class="form-label"><b id="celularFinal">Celular:</b></label>
+          <input type="text" class="form-control" id="celular" placeholder="Cambia tu celular">
+
+          <label for="age" class="form-label"><b id="ageFinal">Edad:</b></label>
+          <input type="number" class="form-control" id="age" min="17" value="17" max="115" placeholder="Cambia tu edad">
+          <br>
+          <label for="gener" class="form-label"><b id="generFinal">Genero:</b></label>
+          <br>
+          <select id="gener" class="form-select">
+            <option selected>Hombre</option>
+            <option>Mujer</option>
+          </select>
+          <br>
+
+          <label for="email" class="form-label"><b id="emailFinal">Email:</b></label>
+          <input type="email" class="form-control" id="email" placeholder="Cambia tu correo electronico">
+          <br>
+          <button id="guardarDatos">Guardar</button>
+        </form>
+      </div>
     </div>
   </div>
   <footer class="text-muted bg-light">
