@@ -285,37 +285,8 @@ input[type="password"]{
 
 
 /*Estilo filtros*/
-#contenedorFiltroPrecio{
-  position: absolute;
-  border: 0px solid #000;
-  width: 300px;
-  text-align: center;
-  margin: auto;
-  left: 950px;
-  top: 200px;
-}
-
-#contenedorAsendenteDesendete{
-  position: absolute;
-  border: 0px solid #000;
-  width: 300px;
-  text-align: center;
-  margin: auto;
-  left: 950px;
-  bottom: 140px;
-}
-
-#contenedorAsendenteDesendete{
-  margin: 10px 0;
-}
-
-#contenedorFiltroPrecio input{
-  margin: 5px 0;
-}
-
 .botonexe{
   border: 3px solid rgba(100,100,100,0.1);
-	margin-bottom: 20px;
 	font-family: 'Poppins', sans-serif;
 	border-radius: 8px;
 	cursor: pointer;

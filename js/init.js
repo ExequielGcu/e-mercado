@@ -59,8 +59,7 @@ function cargarUsuario(){
 
   let nombre = localStorage.getItem("Usuario");
 
-  document.getElementById("prueba").innerHTML = `
-  <span>Usuario: </span>` + nombre;
+  document.getElementById("prueba").innerHTML = "Usuario:" + nombre;
   }
 
   cargarUsuario();

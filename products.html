@@ -1,76 +1,114 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <title>eMercado - Todo lo que busques está aquí</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/1442bcc145.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="principal.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <div class="dropdown">
-          <button id="prueba" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Opciones
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="my-profile.html">Perfil</a>
-            <i class="fas fa-shopping-cart dropdown-item" ><a href="cart.html"> Mi carrito</a></i>
-            <a class="dropdown-item" href="#" onclick="CerrarSession()">Cerrar Session</a>
-          </div>
-      </div>
-    </nav>
-    <div id="contenedorFiltroPrecio" >
-      <label for="Rangos">Filtro de Precios</label><br>
-      <input type="number" name="min" id="min" placeholder="minimo"><br>
-      <input type="number" name="max" id="max" placeholder="maximo"><br>
-      <button class="botonexe btn1" id="filtro">Aplicar Filtro</button>
-      <button class="botonexe btn1" id="eliminarFiltro">Borrar Filtro</button>
-    </div>
-    <div id="contenedorAsendenteDesendete" >
-      <label for="Rangos">Filtar por:</label><br>
-      <button class="botonexe btn1" id="precioAscendete">Precio Ascendente</button>
-      <button class="botonexe btn1" id="precioDesendete">Precio Desendete</button>
-      <button class="botonexe btn1" id="relevancia">Por relvancia</button>
-    </div>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
 
-    <!--Aca invoco los productos-->
-    <div class="container p-5" >
-      <h1>Productos Para Vender</h1>
-      <br>
-      <div id="contenedor-productos" class="text-center">
-        
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/1442bcc145.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="principal.html">Inicio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="products.html">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item dropdown active">
+            <button id="prueba" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Opciones
+        </button>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="my-profile.html">Perfil</a></li>
+              <i class="fas fa-shopping-cart dropdown-item"><a href="cart.html"> Mi carrito</a></i>
+              <a class="dropdown-item" href="#" onclick="CerrarSession()">Cerrar Session</a>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
-    <!--Aca termino de invocar los productos-->
+  </nav>
 
 
 
-    <footer class="text-muted bg-light">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+
+  <!--Aca invoco los productos-->
+  <div class="container">
+    <h1>Productos Para Vender</h1>
+    <br>
+    <div class="row text-center">
+      <div class="col-12" id="contenedorFiltroPrecio">
+        <label for="Rangos">Filtro de Precios</label><br>
+        <input type="number" name="min" id="min" placeholder="minimo"><br>
+        <input type="number" name="max" id="max" placeholder="maximo"><br>
+        <button class="botonexe btn1" id="filtro">Aplicar Filtro</button>
+        <button class="botonexe btn1" id="eliminarFiltro">Borrar Filtro</button>
       </div>
-    </footer>
-    <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/products.js"></script>
-  </body>
+
+      <div class="col-12" id="contenedorAsendenteDesendete">
+        <label for="Rangos">Filtar por:</label><br>
+        <button class="botonexe btn1" id="precioAscendete">Precio Ascendente</button>
+        <button class="botonexe btn1" id="precioDesendete">Precio Desendete</button>
+        <button class="botonexe btn1" id="relevancia">Por relvancia</button>
+      </div>
+
+    </div>
+
+    <br>
+    <br>
+
+    
+    <div id="contenedor-productos" class="text-center row">
+
+    </div>
+  </div>
+  <!--Aca termino de invocar los productos-->
+
+
+
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/products.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
 </html>
