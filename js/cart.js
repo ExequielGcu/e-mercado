@@ -5,7 +5,7 @@ function traerProductosCarrito(array) {
 
     for (let i = 0; i < array.articles.length; i++) {
         let carro = array.articles[i];
-        
+
         productosCarrito += `
 
         <div class="row">
@@ -28,13 +28,17 @@ function traerProductosCarrito(array) {
        </div>
     </div>
         `
-    ;
+            ;
 
         document.getElementById("traeProductosCarro").innerHTML += productosCarrito;
     }
 }
 
-
+function cambiarMetodo(){
+    if( document.getElementById("pagouno").checked){
+        document.getElementById("modo").innerHTML = "Tarjeta de Credito";
+    }
+}
 
 
 
@@ -49,28 +53,118 @@ document.addEventListener("DOMContentLoaded", function (e) {
             //Muestro los productos que tengo
             traerProductosCarrito(carritoproducto);
 
-            let cantidad = document.getElementById("cantidad").value;
             
-                let pesosURU = cantidad * 100;
+
+                if (document.getElementById("uno").checked) {
+                    let cantidad = document.getElementById("cantidad").value;
+
+                    let pesosURU = cantidad * 100;
+
+                    let dolaresUSD = pesosURU / 43.38;
+
+                    let comisionEnvio = (pesosURU * 15) / 100;
+
+                    let envio = pesosURU + comisionEnvio;
+
+                    document.getElementById("pesos").innerHTML = pesosURU;
+
+                    document.getElementById("dolares").innerHTML = dolaresUSD.toFixed(2);
+
+                    document.getElementById("envio").innerHTML = envio;
+
+                } if (document.getElementById("dos").checked) {
+                    let cantidad = document.getElementById("cantidad").value;
+
+                    let pesosURU = cantidad * 100;
+
+                    let dolaresUSD = pesosURU / 43.38;
+
+                    let comisionEnvio = (pesosURU * 7) / 100;
+
+                    let envio = pesosURU + comisionEnvio;
+
+                    document.getElementById("pesos").innerHTML = pesosURU;
+
+                    document.getElementById("dolares").innerHTML = dolaresUSD.toFixed(2);
+
+                    document.getElementById("envio").innerHTML = envio;
+
+                } if (document.getElementById("tres").checked) {
+                    let cantidad = document.getElementById("cantidad").value;
+
+                    let pesosURU = cantidad * 100;
+
+                    let dolaresUSD = pesosURU / 43.38;
+
+                    let comisionEnvio = (pesosURU * 5) / 100;
+
+                    let envio = pesosURU + comisionEnvio;
+
+                    document.getElementById("pesos").innerHTML = pesosURU;
+
+                    document.getElementById("dolares").innerHTML = dolaresUSD.toFixed(2);
+
+                    document.getElementById("envio").innerHTML = envio;
+
+                }
             
-                let dolaresUSD = pesosURU / 43.38;
-            
-                document.getElementById("pesos").innerHTML = pesosURU;
-            
-                document.getElementById("dolares").innerHTML = dolaresUSD.toFixed(2);
 
             //Con un addEventListener por medio del clicj voy cambiando el valor final
-            document.getElementById("cantidad").addEventListener("click", convertir);
+            document.getElementById("cantidad").addEventListener("input", convertir);
+            document.getElementById("respuesta").addEventListener("input", convertir);
             function convertir() {
-                let cantidad = document.getElementById("cantidad").value;
-            
-                let pesosURU = cantidad * 100;
-            
-                let dolaresUSD = pesosURU / 43.38;
-            
-                document.getElementById("pesos").innerHTML = pesosURU;
-            
-                document.getElementById("dolares").innerHTML = dolaresUSD.toFixed(2);
+                if (document.getElementById("uno").checked) {
+                    let cantidad = document.getElementById("cantidad").value;
+
+                    let pesosURU = cantidad * 100;
+
+                    let dolaresUSD = pesosURU / 43.38;
+
+                    let comisionEnvio = (pesosURU * 15) / 100;
+
+                    let envio = pesosURU + comisionEnvio;
+
+                    document.getElementById("pesos").innerHTML = pesosURU;
+
+                    document.getElementById("dolares").innerHTML = dolaresUSD.toFixed(2);
+
+                    document.getElementById("envio").innerHTML = envio;
+
+                } if (document.getElementById("dos").checked) {
+                    let cantidad = document.getElementById("cantidad").value;
+
+                    let pesosURU = cantidad * 100;
+
+                    let dolaresUSD = pesosURU / 43.38;
+
+                    let comisionEnvio = (pesosURU * 7) / 100;
+
+                    let envio = pesosURU + comisionEnvio;
+
+                    document.getElementById("pesos").innerHTML = pesosURU;
+
+                    document.getElementById("dolares").innerHTML = dolaresUSD.toFixed(2);
+
+                    document.getElementById("envio").innerHTML = envio;
+
+                } if (document.getElementById("tres").checked) {
+                    let cantidad = document.getElementById("cantidad").value;
+
+                    let pesosURU = cantidad * 100;
+
+                    let dolaresUSD = pesosURU / 43.38;
+
+                    let comisionEnvio = (pesosURU * 5) / 100;
+
+                    let envio = pesosURU + comisionEnvio;
+
+                    document.getElementById("pesos").innerHTML = pesosURU;
+
+                    document.getElementById("dolares").innerHTML = dolaresUSD.toFixed(2);
+
+                    document.getElementById("envio").innerHTML = envio;
+
+                }
             }
 
         }
