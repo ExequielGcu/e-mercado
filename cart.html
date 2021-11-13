@@ -115,158 +115,187 @@
         <div class="col-md">
           <h1 class="text-center">Tipo de Envio</h1>
           <div class="respuestas" id="respuesta">
-            <input type="radio" name="preg1" value="1" id="uno" >Premium 2 a 5 dias (15%)<br />
+            <input type="radio" name="preg1" value="1" id="uno">Premium 2 a 5 dias (15%)<br />
             <input type="radio" name="preg1" value="2" id="dos">Express 5 a 8 dias (7%)<br />
             <input type="radio" name="preg1" value="3" id="tres" checked>Standard 12 a 15 dias (5%)<br />
           </div>
-      </div>
-      
-   
+        </div>
 
 
-     <!--   Metodo de Envio -->
-     <form action="" class=" g-3 needs-validation" novalidate>
-      <div class="row m-auto ">
+
+
+        <!--   Metodo de Envio -->
+        <form action="" class=" g-3 needs-validation" novalidate>
+          <div class="row m-auto ">
+            <br>
+            <h1 class="text-center">Direccion de Envio</h1>
+            <div>
+              <br>
+              <br>
+              <label for="" class="form-label">Calle</label><br>
+              <input type="text" name="calle" id="calle" class="form-control" required><br>
+              <div class="valid-feedback">Campo OK</div>
+              <div class="invalid-feedback">Campo Vacio</div>
+              <label for="" class="form-label">Numero</label><br>
+              <input type="number" name="numero" id="numero" class="form-control" required><br>
+              <div class="valid-feedback">Campo OK</div>
+              <div class="invalid-feedback">Campo Vacio</div>
+              <label for="" class="form-label">Esquina</label><br>
+              <input type="text" name="esquina" id="esquina" class="form-control" required>
+              <div class="valid-feedback">Campo OK</div>
+              <div class="invalid-feedback">Campo Vacio</div>
+            </div>
+
+            <br>
+          </div>
+
+
+
+          <br><br>
+
+          <div class="row m-auto selector-moneda-de-pago">
+            <div class="col col-md-4 text-center">
+              <label for="peso">Pagar en: <b>Pesos</b></label><br>
+              <span id="pesos">Precio</span>
+            </div>
+            <div class="col col-md-4 text-center">
+              <label for="dolares">Pagar en: <b>Dolares</b></label><br>
+              <span id="dolares"></span>
+            </div>
+            <div class="col col-md-4 text-center">
+              <label for="dolares"><b>Total con Envio: </b></label><br>
+              <span id="envio"></span>
+            </div>
+          </div>
           <br>
-          <h1 class="text-center">Direccion de Envio</h1>
+
           <div>
-            <br>
-            <br>
-            <label for="" class="form-label">Calle</label><br>
-            <input type="text" name="calle" id="calle" class="form-control"  required><br>
-            <div class="valid-feedback">Campo OK</div>
-            <div class="invalid-feedback">Campo Vacio</div>
-            <label for="" class="form-label">Numero</label><br>
-            <input type="number" name="numero" id="numero" class="form-control"  required><br>
-            <div class="valid-feedback">Campo OK</div>
-            <div class="invalid-feedback">Campo Vacio</div>
-            <label for="" class="form-label">Esquina</label><br>
-            <input type="text" name="esquina" id="esquina" class="form-control" required> 
-            <div class="valid-feedback">Campo OK</div>
-            <div class="invalid-feedback">Campo Vacio</div>
+            <h3>Formas de Pago</h3>
+            <b id="modo">No ha selecionado </b>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Selecionar
+            </button>
+
+            <!-- Modal -->
+            <div id="pago">
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Forma de Pago</h5>
+                    </div>
+                    <div class="modal-body">
+                      <hr>
+                      <h4>
+                        <input type="radio" name="pago1" value="1" id="pagouno" checked>Tarjeta de Credito<br />
+                      </h4>
+                      <hr>
+                      <br>
+                      <div>
+                        <div>
+                          <label for="numtarjeta">Numero tarjeta de credito</label><br>
+                          <input type="number" name="numtarjeta" id="numtarjeta" class="form-control" required><br>
+                          <div class="valid-feedback">Campo OK</div>
+                          <div class="invalid-feedback">Campo Vacio</div>
+                        </div>
+                        <div>
+                          <label for="cvctarjeta">CVC</label><br>
+                          <input type="number" name="cvctarjeta" id="cvctarjeta" class="form-control" required><br>
+                          <div class="valid-feedback">Campo OK</div>
+                          <div class="invalid-feedback">Campo Vacio</div>
+                        </div>
+                        <div>
+                          <label for="ventarjeta">Vencimiento (MM/AA)</label><br>
+                          <input type="number" name="ventarjeta" id="ventarjeta" class="form-control" required><br>
+                          <div class="valid-feedback">Campo OK</div>
+                          <div class="invalid-feedback">Campo Vacio</div>
+                        </div>
+                      </div>
+                      
+
+
+                      <h4>
+                        <input type="radio" name="pago1" value="2" id="pagodos">Transferencia Bancaria<br />
+                      </h4>
+                      <div>
+                        <label for="numcuenta">Numero de cuenta</label><br>
+                        <input type="number" name="numcuenta" id="numcuenta" class="form-control" required><br>
+                        <div class="valid-feedback">Campo OK</div>
+                        <div class="invalid-feedback">Campo Vacio</div>
+                      </div>
+
+
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button type="button" class="btn btn-primary" onclick="cambiarMetodo()">Guardar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
           </div>
 
           <br>
-        </div>
+          <div class="col-md">
+            <button class="newcart-proximo-paso" type="submit">Pagar</button>
+          </div>
 
-  
-  
-      <br><br>
-
-      <div class="row m-auto selector-moneda-de-pago">
-        <div class="col col-md-4 text-center">
-          <label for="peso">Pagar en: <b>Pesos</b></label><br>
-          <span id="pesos">Precio</span>
-        </div>
-        <div class="col col-md-4 text-center">
-          <label for="dolares">Pagar en: <b>Dolares</b></label><br>
-          <span id="dolares"></span>
-        </div>
-        <div class="col col-md-4 text-center">
-          <label for="dolares"><b>Total con Envio: </b></label><br>
-          <span id="envio"></span>
-        </div>
-      </div>
-      <br>
-  
-      <div>
-        <h3>Formas de Pago</h3>
-        <b id="modo">No ha selecionado </b>
-  
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Selecionar
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Forma de Pago</h5>
-        </div>
-        <div class="modal-body">
-          <hr>
-          <input type="radio" name="pago1" value="1" id="pagouno" checked >Tarjeta de Credito<br />
-          <hr>
           <br>
-          <label for="numtarjeta">Numero tarjeta de credito</label><br>
-          <input type="number" name="numtarjeta" id="numtarjeta" class="form-control"  required><br>
-          <div class="valid-feedback">Campo OK</div>
-          <div class="invalid-feedback">Campo Vacio</div>
-          <label for="cvctarjeta">CVC</label><br>
-          <input type="number" name="cvctarjeta" id="cvctarjeta" class="form-control"  required><br>
-          <div class="valid-feedback">Campo OK</div>
-          <div class="invalid-feedback">Campo Vacio</div>
-          <label for="ventarjeta">Vencimiento (MM/AA)</label><br>
-          <input type="number" name="ventarjeta" id="ventarjeta" class="form-control"  required><br>
-          <div class="valid-feedback">Campo OK</div>
-          <div class="invalid-feedback">Campo Vacio</div>
+        </form>
 
-        
-  
+
+
+
+
+
+        <div id="spinner-wrapper">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary" onclick="cambiarMetodo()">Guardar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-      </div>
-
-      <br>
-      <div class="col-md">
-        <button class="newcart-proximo-paso" type="submit">Pagar</button>
-      </div>
-
-      <br>
-     </form>
-     
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/dropzone.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/cart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+          crossorigin="anonymous"></script>
 
 
-    
+        <script>
+          // Example starter JavaScript for disabling form submissions if there are invalid fields
+          (function () {
+            'use strict'
 
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
 
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+              .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                  if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                    alert("Faltan completar datos");
+                  }
 
-
-<script>
-  // Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-          alert("Faltan completar datos");
-        }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
-</script>
+                  form.classList.add('was-validated')
+                }, false)
+              })
+          })()
+        </script>
 </body>
 
 </html>

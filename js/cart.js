@@ -38,6 +38,9 @@ function cambiarMetodo(){
     if( document.getElementById("pagouno").checked){
         document.getElementById("modo").innerHTML = "Tarjeta de Credito";
     }
+    if( document.getElementById("pagodos").checked){
+        document.getElementById("modo").innerHTML = "Transeferencia Bancaria";
+    }
 }
 
 
@@ -53,8 +56,33 @@ document.addEventListener("DOMContentLoaded", function (e) {
             //Muestro los productos que tengo
             traerProductosCarrito(carritoproducto);
 
+            //Aca se elige el metodo de pago
+
+            if (document.getElementById("pagouno").checked) {
+                nCuenta = document.getElementById("numcuenta");
+                nTarjeta = document.getElementById("numtarjeta");
+                nCvc = document.getElementById("cvctarjeta");
+                tarVenci = document.getElementById("ventarjeta");
+
+                nCuenta.disabled = true;
+                nTarjeta.disabled = false;
+                nCvc.disabled = false;
+                tarVenci.disabled = false;
+
+            } if (document.getElementById("pagodos").checked) {
+                nTarjeta = document.getElementById("numtarjeta");
+                nCvc = document.getElementById("cvctarjeta");
+                tarVenci = document.getElementById("ventarjeta");
+                nCuenta = document.getElementById("numcuenta");
+                nCuenta.disabled = false;
+                nTarjeta.disabled = true;
+                nCvc.disabled = true;
+                tarVenci.disabled = true;
+            } 
+            //Aca se elige el metodo de pago
             
 
+            //Aca se calcula los metodos de envio
                 if (document.getElementById("uno").checked) {
                     let cantidad = document.getElementById("cantidad").value;
 
@@ -107,6 +135,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
                     document.getElementById("envio").innerHTML = envio;
 
                 }
+
+                //Aca se calcula los metodos de envio
             
 
             //Con un addEventListener por medio del clicj voy cambiando el valor final
@@ -165,6 +195,35 @@ document.addEventListener("DOMContentLoaded", function (e) {
                     document.getElementById("envio").innerHTML = envio;
 
                 }
+            }
+
+
+
+
+            //Aca se elige el metodo de pago
+            document.getElementById("pago").addEventListener("input", metodo);
+            function metodo(){
+                if (document.getElementById("pagouno").checked) {
+                    nCuenta = document.getElementById("numcuenta");
+                    nTarjeta = document.getElementById("numtarjeta");
+                    nCvc = document.getElementById("cvctarjeta");
+                    tarVenci = document.getElementById("ventarjeta");
+
+                    nCuenta.disabled = true;
+                    nTarjeta.disabled = false;
+                    nCvc.disabled = false;
+                    tarVenci.disabled = false;
+
+                } if (document.getElementById("pagodos").checked) {
+                    nTarjeta = document.getElementById("numtarjeta");
+                    nCvc = document.getElementById("cvctarjeta");
+                    tarVenci = document.getElementById("ventarjeta");
+                    nCuenta = document.getElementById("numcuenta");
+                    nCuenta.disabled = false;
+                    nTarjeta.disabled = true;
+                    nCvc.disabled = true;
+                    tarVenci.disabled = true;
+                } 
             }
 
         }
